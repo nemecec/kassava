@@ -1,4 +1,4 @@
-package au.com.console.kassava
+package dev.nemecec.kassava
 
 /**
  * Interface to enable mixed-type equality.

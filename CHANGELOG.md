@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- The artifact is published as `dev.nemecec.kassava:kassava` instead of `au.com.console:kassava`, from Maven Central instead of Bintray/JCenter. The Kotlin package stays `au.com.console.kassava`, so only the dependency coordinate changes - imports and call sites are untouched.
+- The artifact is published as `dev.nemecec.kassava:kassava` instead of `au.com.console:kassava`, from Maven Central instead of Bintray/JCenter.
+- The Kotlin package is `dev.nemecec.kassava` instead of `au.com.console.kassava`, matching the new coordinates. Call sites are otherwise unchanged, so rewriting the import lines is the whole migration. The old package is not kept as a forwarding layer: it would clash if both artifacts ended up on one classpath.
 - The project is built with Gradle 9 and Kotlin 2.4 (previously Gradle 6 and Kotlin 1.3). The published classes still target Java 8 bytecode, but consuming the library now requires a Kotlin 2.x compiler.
 - `kotlin-reflect` is no longer a dependency. The library resolves the name and getter of the property references it is handed without it, so `kotlin-stdlib` is the only remaining dependency.
 - The public declarations are explicitly `public` (Kotlin explicit API mode). Signatures are unchanged.

@@ -1,8 +1,8 @@
-package au.com.console.kassava.model
+package dev.nemecec.kassava.model
 
-import au.com.console.kassava.kotlinEquals
-import au.com.console.kassava.kotlinHashCode
-import au.com.console.kassava.kotlinToString
+import dev.nemecec.kassava.kotlinEquals
+import dev.nemecec.kassava.kotlinHashCode
+import dev.nemecec.kassava.kotlinToString
 
 /**
  * Company class - for array field equality.

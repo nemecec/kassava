@@ -1,9 +1,9 @@
-package au.com.console.kassava
+package dev.nemecec.kassava
 
-import au.com.console.kassava.model.ColouredPoint
-import au.com.console.kassava.model.Company
-import au.com.console.kassava.model.Employee
-import au.com.console.kassava.model.Point
+import dev.nemecec.kassava.model.ColouredPoint
+import dev.nemecec.kassava.model.Company
+import dev.nemecec.kassava.model.Employee
+import dev.nemecec.kassava.model.Point
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
