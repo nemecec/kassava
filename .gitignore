@@ -1,4 +1,19 @@
 .gradle/
 build/
-.idea/
 /out/
+
+# Kotlin
+.kotlin/
+
+# Avoid ignoring the Gradle wrapper jar (*.jar is usually ignored)
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDEs
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# Claude Code
+/.claude/

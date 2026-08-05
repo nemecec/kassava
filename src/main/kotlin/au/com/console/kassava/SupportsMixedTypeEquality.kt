@@ -6,7 +6,7 @@ package au.com.console.kassava
  *
  * @author James Bassett (james.bassett@console.com.au)
  */
-interface SupportsMixedTypeEquality {
+public interface SupportsMixedTypeEquality {
 
     /**
      * Returns true if this object can be compared for equality with the other object.
@@ -14,5 +14,5 @@ interface SupportsMixedTypeEquality {
      * The typical implementation is to check if other is an instance of this class. This method should always be
      * overridden in subclasses, unless they are trivially different (no new fields).
      */
-    fun canEqual(other: Any?): Boolean
+    public fun canEqual(other: Any?): Boolean
 }

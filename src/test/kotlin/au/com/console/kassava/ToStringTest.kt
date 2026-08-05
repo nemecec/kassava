@@ -1,19 +1,18 @@
 package au.com.console.kassava
 
 import au.com.console.kassava.model.Animal
-import com.natpryce.hamkrest.assertion.assertThat
-import com.natpryce.hamkrest.equalTo
-import org.spekframework.spek2.Spek
-import org.spekframework.spek2.style.specification.describe
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
 /**
- * Specification for the [kotlinToString] extension method.
+ * Tests for the [kotlinToString] extension method.
  *
  * @author James Bassett (james.bassett@console.com.au)
  */
-class ToStringSpec : Spek({
+class ToStringTest {
 
-    describe("a fully populated person") {
+    @Test
+    fun `a fully populated person has the correct string representation`() {
         val person = Person(
             name = "Jim",
             age = 31,
@@ -23,34 +22,38 @@ class ToStringSpec : Spek({
                 country = "US"
             )
         )
-        it("should have the correct string representation") {
-            assertThat(person.toString(), equalTo("Person(name=Jim, age=31, address=Address(streetNumber=123, streetName=Sesame, country=US))"))
-        }
+
+        assertEquals(
+            "Person(name=Jim, age=31, address=Address(streetNumber=123, streetName=Sesame, country=US))",
+            person.toString()
+        )
     }
 
-    describe("a person with only mandatory properties") {
+    @Test
+    fun `a person with only mandatory properties has the correct string representation`() {
         val person = Person(
             name = "Jim",
             address = Person.Address(country = "US")
         )
 
-        it("should have the correct string representation") {
-            assertThat(person.toString(), equalTo("Person(name=Jim, age=null, address=Address(streetNumber=null, streetName=null, country=US))"))
-        }
+        assertEquals(
+            "Person(name=Jim, age=null, address=Address(streetNumber=null, streetName=null, country=US))",
+            person.toString()
+        )
     }
 
-    describe("a person with omitNulls enabled and only mandatory properties") {
+    @Test
+    fun `a person with omitNulls enabled and only mandatory properties has the correct string representation`() {
         val person = PersonOmitNulls(
             name = "Jim",
             address = PersonOmitNulls.Address(country = "US")
         )
 
-        it("should have the correct string representation") {
-            assertThat(person.toString(), equalTo("PersonOmitNulls(name=Jim, address=Address(country=US))"))
-        }
+        assertEquals("PersonOmitNulls(name=Jim, address=Address(country=US))", person.toString())
     }
 
-    describe("an anonymous person object") {
+    @Test
+    fun `an anonymous person object has the correct string representation`() {
         val person = object : Person(
             name = "Jim",
             age = 31,
@@ -60,40 +63,41 @@ class ToStringSpec : Spek({
                 country = "US"
             )
         ) {}
-        it("should have the correct string representation") {
-            assertThat(person.toString(), equalTo("Person(name=Jim, age=31, address=Address(streetNumber=123, streetName=Sesame, country=US))"))
-        }
+
+        assertEquals(
+            "Person(name=Jim, age=31, address=Address(streetNumber=123, streetName=Sesame, country=US))",
+            person.toString()
+        )
     }
 
-    describe("a cat that extends animal") {
+    @Test
+    fun `a cat that extends animal has the correct string representation (with super field)`() {
         val cat = Animal.Cat(name = "Marmalade", mice = 1)
 
-        it("should have the correct string representation (with super field)") {
-            assertThat(cat.toString(), equalTo("Cat(mice=1, super=Animal(name=Marmalade))"))
-        }
+        assertEquals("Cat(mice=1, super=Animal(name=Marmalade))", cat.toString())
     }
 
-    describe("a dog that extends animal") {
+    @Test
+    fun `a dog that extends animal has the correct string representation (with super field)`() {
         val dog = Animal.Dog(name = "Fido", bones = 2)
 
-        it("should have the correct string representation (with super field)") {
-            assertThat(dog.toString(), equalTo("Dog(bones=2, balls=null, super=Animal(name=Fido))"))
-        }
+        assertEquals("Dog(bones=2, balls=null, super=Animal(name=Fido))", dog.toString())
     }
 
-    describe("an object with a 2D array") {
-        val value = ClassWithArray(array = arrayOf(
-            arrayOf(1, 2, 3),
-            null,
-            arrayOf(4, 5, 6),
-            arrayOf(7, 8, 9)
-        ))
-        it("should have the correct string representation") {
-            assertThat(value.toString(), equalTo("ClassWithArray(array=[[1, 2, 3], null, [4, 5, 6], [7, 8, 9]])"))
-        }
-    }
+    @Test
+    fun `an object with a 2D array has the correct string representation`() {
+        val value = ClassWithArray(
+            array = arrayOf(
+                arrayOf(1, 2, 3),
+                null,
+                arrayOf(4, 5, 6),
+                arrayOf(7, 8, 9)
+            )
+        )
 
-})
+        assertEquals("ClassWithArray(array=[[1, 2, 3], null, [4, 5, 6], [7, 8, 9]])", value.toString())
+    }
+}
 
 /**
  * Simple Person class.
@@ -112,7 +116,7 @@ private open class Person(val name: String, val age: Int? = null, val address: A
 }
 
 /**
- * Person class that omits nulls in it's string representation.
+ * Person class that omits nulls in its string representation.
  */
 private class PersonOmitNulls(val name: String, val age: Int? = null, val address: Address) {
 
