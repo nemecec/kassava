@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0] - 2026-08-05
+
 ### Changed
 
 - The artifact is published as `dev.nemecec.kassava:kassava` instead of `au.com.console:kassava`, from Maven Central instead of Bintray/JCenter.
@@ -34,4 +36,5 @@ Releases up to and including 2.1.0 were published as `au.com.console:kassava` an
 predate this changelog. See the
 [release list](https://github.com/nemecec/kassava/releases) for those versions.
 
-[Unreleased]: https://github.com/nemecec/kassava/compare/v2.1.0...HEAD
+[Unreleased]: https://github.com/nemecec/kassava/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/nemecec/kassava/compare/v2.1.0...v3.0.0

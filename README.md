@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    implementation("dev.nemecec.kassava:kassava:3.0.0-SNAPSHOT")
+    implementation("dev.nemecec.kassava:kassava:3.0.0")
 }
 ```
 
@@ -48,7 +48,7 @@ Maven:
 <dependency>
     <groupId>dev.nemecec.kassava</groupId>
     <artifactId>kassava</artifactId>
-    <version>3.0.0-SNAPSHOT</version>
+    <version>3.0.0</version>
 </dependency>
 ```
 
