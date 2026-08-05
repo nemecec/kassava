@@ -2,7 +2,7 @@
 [![Build](https://github.com/nemecec/kassava/actions/workflows/build.yml/badge.svg)](https://github.com/nemecec/kassava/actions/workflows/build.yml)
 [![Maven Central](https://img.shields.io/maven-central/v/dev.nemecec.kassava/kassava.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/dev.nemecec.kassava/kassava)
 [![License](https://img.shields.io/:license-apache-blue.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
-[![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin)
+[![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/Heapy/awesome-kotlin)
 
 This library provides some useful kotlin extension functions for implementing `toString()`, `equals()` and `hashCode()` without all of the boilerplate.
 
