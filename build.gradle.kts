@@ -9,6 +9,7 @@ plugins {
   alias(libs.plugins.bnd)
   alias(libs.plugins.dokka)
   alias(libs.plugins.maven.publish)
+  alias(libs.plugins.spotless)
 }
 
 group = "dev.nemecec.kassava"
@@ -142,6 +143,15 @@ mavenPublishing {
       connection.set("scm:git:git://github.com/nemecec/kassava.git")
       developerConnection.set("scm:git:ssh://git@github.com/nemecec/kassava.git")
     }
+  }
+}
+
+// `check` depends on `spotlessCheck`, so CI fails on unformatted sources; run
+// `./gradlew spotlessApply` to fix them.
+spotless {
+  kotlin {
+    target("src/**/*.kt")
+    ktfmt(libs.versions.ktfmt.get()).googleStyle()
   }
 }
 
