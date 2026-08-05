@@ -1,3 +1,25 @@
+buildscript {
+  // Dokka's Gradle plugin drags in Jackson 2.15.3, which GitHub flags for seven
+  // advisories. These are build-time only - Jackson never reaches the published
+  // artifact, whose sole dependency is kotlin-stdlib - but pinning keeps the alert
+  // list meaningful. 2.18.9 is deliberate: every one of these advisories has a
+  // second vulnerable range covering 2.19.0 up to 2.21.4/2.21.5, so moving to a
+  // newer 2.19.x or 2.20.x would leave all seven open, and 2.21.5+ is not on
+  // Maven Central yet.
+  configurations.classpath {
+    resolutionStrategy.eachDependency {
+      if (requested.group.startsWith("com.fasterxml.jackson")) {
+        useVersion("2.18.9")
+        because(
+          "GHSA-r7wm-3cxj-wff9, GHSA-rmj7-2vxq-3g9f, GHSA-j3rv-43j4-c7qm, " +
+            "GHSA-72hv-8253-57qq, GHSA-hgj6-7826-r7m5, GHSA-3pjw-73gf-8qr5, " +
+            "GHSA-5jmj-h7xm-6q6v"
+        )
+      }
+    }
+  }
+}
+
 import aQute.bnd.gradle.BundleTaskExtension
 import org.jetbrains.dokka.gradle.engine.parameters.VisibilityModifier
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
