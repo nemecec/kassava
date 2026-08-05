@@ -240,7 +240,14 @@ By contributing your code, you agree to license your contribution under the term
 
 # License #
 
+This is a modified distribution of software originally published as
+[`au.com.console:kassava`](https://github.com/consoleau/kassava). See
+[NOTICE](NOTICE) for the attribution and the list of changes, and
+[CHANGELOG.md](CHANGELOG.md) for the detail.
+
 Copyright 2016 RES INFORMATION SERVICES PTY LTD
+
+Copyright 2026 Neeme Praks
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

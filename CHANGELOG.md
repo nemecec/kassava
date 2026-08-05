@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Sources and API documentation (Dokka) jars are published alongside the main jar.
 - GitHub Actions workflows for builds, CodeQL analysis, dependency-graph submission and releases, plus weekly Dependabot updates for Gradle dependencies and actions.
 - A security policy describing how to report vulnerabilities privately.
+- A `NOTICE` file recording the original copyright, the copyright on the modifications, and what was changed - as the Apache License asks of a modified distribution. Redistributing this project means carrying that file along too.
 
 ### Removed
 
