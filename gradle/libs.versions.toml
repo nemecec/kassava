@@ -1,9 +1,11 @@
 [versions]
 kotlin = "2.4.0"
+ktfmt = "0.54"
 junit = "6.1.0"
 bnd = "7.3.0"
 dokka = "2.2.0"
 maven-publish = "0.37.0"
+spotless = "8.6.0"
 
 [libraries]
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
@@ -15,3 +17,4 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 bnd = { id = "biz.aQute.bnd.builder", version.ref = "bnd" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
