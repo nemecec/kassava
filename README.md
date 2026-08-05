@@ -1,7 +1,7 @@
 # Kassava
-[![Build Status](https://travis-ci.org/consoleau/kassava.svg?branch=master)](https://travis-ci.org/consoleau/kassava)
-[![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0.html)
-[ ![Download](https://api.bintray.com/packages/consoleau/kotlin/kassava/images/download.svg) ](https://bintray.com/consoleau/kotlin/kassava/_latestVersion)
+[![Build](https://github.com/nemecec/kassava/actions/workflows/build.yml/badge.svg)](https://github.com/nemecec/kassava/actions/workflows/build.yml)
+[![Maven Central](https://img.shields.io/maven-central/v/dev.nemecec.kassava/kassava.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/dev.nemecec.kassava/kassava)
+[![License](https://img.shields.io/:license-apache-blue.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin)
 
 This library provides some useful kotlin extension functions for implementing `toString()`, `equals()` and `hashCode()` without all of the boilerplate.
@@ -27,15 +27,34 @@ It's also really tiny (about 6kB), as it doesn't depend on any other libraries (
 
 # Quick Start
 
-```groovy
+The library is published to Maven Central as `dev.nemecec.kassava:kassava`. It targets
+Java 8 bytecode and requires a Kotlin 2.x compiler; `kotlin-stdlib` is its only dependency.
+
+Gradle:
+
+```kotlin
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
-    compile("au.com.console:kassava:2.1.0")
+    implementation("dev.nemecec.kassava:kassava:3.0.0-SNAPSHOT")
 }
 ```
+
+Maven:
+
+```xml
+<dependency>
+    <groupId>dev.nemecec.kassava</groupId>
+    <artifactId>kassava</artifactId>
+    <version>3.0.0-SNAPSHOT</version>
+</dependency>
+```
+
+Coming from `au.com.console:kassava` 2.x? Change the coordinate only - the Kotlin package
+is still `au.com.console.kassava`, so imports and call sites stay as they are. See the
+[changelog](CHANGELOG.md) for the full list of differences.
 
 # Simple Example
 
@@ -44,8 +63,6 @@ dependencies {
 import au.com.console.kassava.kotlinEquals
 import au.com.console.kassava.kotlinHashCode
 import au.com.console.kassava.kotlinToString
-
-import java.util.Objects
 
 class Employee(val name: String, val age: Int? = null) {
 
