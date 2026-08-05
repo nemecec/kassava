@@ -3,8 +3,9 @@ name: CodeQL
 on:
   push:
     branches: [master, main]
-  pull_request:
-    branches: [master, main]
+  # No branch filter: stacked pull requests target another topic branch
+  # rather than master, and they need checks just as much.
+  pull_request: { }
   schedule:
     # Weekly scan to catch newly published queries against unchanged code.
     - cron: '17 4 * * 1'
