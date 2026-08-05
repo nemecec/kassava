@@ -52,17 +52,23 @@ Maven:
 </dependency>
 ```
 
-Coming from `au.com.console:kassava` 2.x? Change the coordinate only - the Kotlin package
-is still `au.com.console.kassava`, so imports and call sites stay as they are. See the
-[changelog](CHANGELOG.md) for the full list of differences.
+Coming from `au.com.console:kassava` 2.x? Change the coordinate and rewrite the imports -
+the Kotlin package moved from `au.com.console.kassava` to `dev.nemecec.kassava`. Call sites
+are otherwise unchanged, so a search and replace over the import lines is enough:
+
+```bash
+find . -name '*.kt' -exec sed -i '' 's/au\.com\.console\.kassava/dev.nemecec.kassava/g' {} +
+```
+
+See the [changelog](CHANGELOG.md) for the full list of differences.
 
 # Simple Example
 
 ```kotlin
 // 1. Import extension functions
-import au.com.console.kassava.kotlinEquals
-import au.com.console.kassava.kotlinHashCode
-import au.com.console.kassava.kotlinToString
+import dev.nemecec.kassava.kotlinEquals
+import dev.nemecec.kassava.kotlinHashCode
+import dev.nemecec.kassava.kotlinToString
 
 class Employee(val name: String, val age: Int? = null) {
 
@@ -109,10 +115,10 @@ Here is an example of it in use (in a typical kotlin sealed class example).
 Note the use of `superEquals`, `superHashCode` and `superToString` in the subclasses - these are lambdas that allow you to reuse the logic in your parent class.
 
 ```kotlin
-import au.com.console.kassava.kotlinEquals
-import au.com.console.kassava.kotlinHashCode
-import au.com.console.kassava.kotlinToString
-import au.com.console.kassava.SupportsMixedTypeEquality
+import dev.nemecec.kassava.kotlinEquals
+import dev.nemecec.kassava.kotlinHashCode
+import dev.nemecec.kassava.kotlinToString
+import dev.nemecec.kassava.SupportsMixedTypeEquality
 
 /**
  * Animal base class with Cat/Dog subclasses.

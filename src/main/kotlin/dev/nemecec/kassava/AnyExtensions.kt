@@ -1,4 +1,4 @@
-package au.com.console.kassava
+package dev.nemecec.kassava
 
 import java.util.Objects
 import kotlin.reflect.KProperty1

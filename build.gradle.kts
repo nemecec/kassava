@@ -74,11 +74,11 @@ tasks.jar {
   val bundle = extensions.getByType(BundleTaskExtension::class.java)
   bundle.setBnd(
     """
-    Bundle-SymbolicName: au.com.console.kassava
+    Bundle-SymbolicName: dev.nemecec.kassava
     Bundle-Name: Kassava
     Bundle-Description: ${project.description}
-    Automatic-Module-Name: au.com.console.kassava
-    Export-Package: au.com.console.kassava
+    Automatic-Module-Name: dev.nemecec.kassava
+    Export-Package: dev.nemecec.kassava
     -removeheaders: Private-Package
     """.trimIndent()
   )
