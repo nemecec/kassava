@@ -136,7 +136,7 @@ dokka {
     jdkVersion.set(8)
     sourceLink {
       localDirectory.set(projectDir)
-      remoteUrl.set(URI("https://github.com/nemecec/kassava/tree/master/"))
+      remoteUrl.set(URI("https://github.com/nemecec/kassava/tree/main"))
       remoteLineSuffix.set("#L")
     }
   }
