@@ -54,7 +54,7 @@ configurations.configureEach {
 }
 
 group = "dev.nemecec.kassava"
-version = "3.0.0"
+version = "3.0.1-SNAPSHOT"
 description =
   "Kotlin extension functions for implementing toString(), equals() and hashCode() " +
     "without all of the boilerplate."
