@@ -1,6 +1,6 @@
-package au.com.console.kassava
+package dev.nemecec.kassava
 
-import au.com.console.kassava.model.Animal
+import dev.nemecec.kassava.model.Animal
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 

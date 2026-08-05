@@ -1,9 +1,9 @@
-package au.com.console.kassava.model
+package dev.nemecec.kassava.model
 
-import au.com.console.kassava.SupportsMixedTypeEquality
-import au.com.console.kassava.kotlinEquals
-import au.com.console.kassava.kotlinHashCode
-import au.com.console.kassava.kotlinToString
+import dev.nemecec.kassava.SupportsMixedTypeEquality
+import dev.nemecec.kassava.kotlinEquals
+import dev.nemecec.kassava.kotlinHashCode
+import dev.nemecec.kassava.kotlinToString
 
 /**
  * Animal base class with Cat/Dog subclasses.
